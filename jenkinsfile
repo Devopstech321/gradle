@@ -10,9 +10,8 @@ pipeline
         stage("build gradle project")
         {
             steps{withGradle(jdk: 'JAVA-HOME', gradle: 'GRADLE_HOME') {
-            
-       sh'gradle build'
-}}
+            sh './gradlew build'}
+            }
         }
     }
 }
