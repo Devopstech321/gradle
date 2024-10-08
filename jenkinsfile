@@ -3,6 +3,10 @@ pipeline
     agent any
     stages
     {
+        stage("scm checkout")
+        {
+            steps{git branch: 'master', url: 'https://github.com/Devopstech321/gradle.git'}
+        }
         stage("build gradle project")
         {
             steps{withGradle(jdk: 'JAVA-HOME', gradle: 'GRADLE_HOME') {
