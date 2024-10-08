@@ -10,7 +10,7 @@ pipeline
         stage("build gradle project")
         {
             steps{withGradle {
-            sh './gradlew build'}
+            sh './gradle build'}
             }
         
         
