@@ -9,9 +9,11 @@ pipeline
         }
         stage("build gradle project")
         {
-            steps{withGradle {
-            sh './gradle build'}
-            }
+             steps { sh './gradlew clean'
+              sh './gradlew assemble'
+              sh './gradlew build'
+              sh './gradlew jar'
+              }
         
         
         }
